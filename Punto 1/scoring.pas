@@ -1,0 +1,48 @@
+
+Program TPscoring;
+
+Uses u_conductores, u_infracciones, crt;
+
+Var 
+  op: 0..5;
+  //! CRUD de conductores
+  //! CRUD de infracciones
+  //! Actualización de scoring por infracción
+  //! Listado por Apellido y Nombre
+  //! Listado por fecha de todas las infracciones en un período determinado
+  //! Fecha de todas las infracciones de un conductor en un período determinado
+  //! Listado de los infractores a los cuales su scoring llegó a 0
+  //!Estadísticas:
+
+{
+               - Cantidad de infracciones entre dos fechas
+               - Porcentaje de conductores con reincidencia
+               - Porcentaje de conductores con scoring 0
+               - Total (agregar esta opción según su criterio y que sea de utilidad para la municipalidad)
+               - Rango etario con más infracciones (menores de 30, entre 31 y
+                                                     50, mayores a 50)}
+
+
+Procedure menu();
+Begin
+  Repeat
+    writeln('Bienvenido al  Software de scoring');
+    writeln('Elija una operación:');
+    writeln('1) Administrar conductores');
+    writeln('2) Administrar infracciones');
+    writeln('0) Salir del programa');
+    readln(op);
+    Case op Of 
+      1: menu_conductores;
+      2: menu_infracciones;
+    End;
+  Until (res=0);
+End;
+Procedure menu_conductores();
+Begin
+
+End;
+Procedure menu_infracciones();
+Begin
+
+End;
