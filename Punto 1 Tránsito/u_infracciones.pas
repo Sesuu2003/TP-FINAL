@@ -13,11 +13,6 @@ Type
     puntos: 0..20;
   End;
   t_archivo = file Of t_dato;
-  //Lista Infracciones master
-  t_puntLM = ^t_nodoLM;
-  t_nodoLM = Record
-  Info:t_dato;
-  Sig: t_puntLM;
 Implementation
 procedure CargaInfra(var dato:t_dato, Codigo:cardinal);
 begin
