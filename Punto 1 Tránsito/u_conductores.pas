@@ -21,6 +21,7 @@ Type
     Habilitado: boolean;
     Fecha_habilitacion: string[10];
     cant_reincidencias: 0..N;
+    Activo:boolean; //Por si el scoring es 0, baja lógica;
   End;
   t_archivo = file Of t_dato;
 Var 
@@ -39,8 +40,7 @@ Begin
   readln(dato.Telefono);
   writeln('Ingrese el email: ');
   readln(dato.Email);
-  writeln('Ingrese el scoring: ');
-  readln(dato.Scoring);
+  dato.Scoring:= 20; //Scoring en 20 automaticamente por primera vez cargado;
   writeln('Ingrese la fecha de habilitación: ');
   readln(dato.Fecha_habilitacion);
   writeln('Ingrese cantidad de reincidencias: ');
@@ -58,9 +58,9 @@ Var
   dato: t_dato;
   pos: cardinal;
 Begin
-  CargaInfra(dato);
-  pos := filesize(InfraMaster);
-  GuardarInfra(InfraMaster, pos, dato)
+  CargaCond(dato);
+  pos := filesize(CondMaster);
+  GuardarCond(CondMaster, pos, dato)
 End;
 
 Procedure baja();
