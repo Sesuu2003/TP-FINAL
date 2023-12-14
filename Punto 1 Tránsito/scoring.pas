@@ -1,6 +1,6 @@
 Program TPscoring;
 
-Uses u_conductores, u_infracciones, crt;
+Uses u_conductores, u_infracciones, u_utilidades, crt;
 
 Var 
   op: 0..5;
@@ -60,4 +60,8 @@ Procedure menu_infracciones();
   Until (res=0);
 End;
 begin
+<<<<<<< Updated upstream
+=======
+  
+>>>>>>> Stashed changes
 end.

@@ -1,7 +1,9 @@
 Unit u_utilidades;
 
 Uses crt;
-
+Interface
+Procedure iniciar_archivo(Var archivo:t_archivo);
+Implementation
 //Archivos
 Procedure iniciar_archivo(Var archivo:t_archivo);
 //abrir archivo si existe, crear si no existe.
