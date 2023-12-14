@@ -14,18 +14,19 @@ Var
   //! Listado de los infractores a los cuales su scoring llegó a 0
   //!Estadísticas:
 
-{
-               - Cantidad de infracciones entre dos fechas
-               - Porcentaje de conductores con reincidencia
-               - Porcentaje de conductores con scoring 0
-               - Total (agregar esta opción según su criterio y que sea de utilidad para la municipalidad)
-               - Rango etario con más infracciones (menores de 30, entre 31 y
-                                                     50, mayores a 50)}
 
+{
+  - Cantidad de infracciones entre dos fechas
+  - Porcentaje de conductores con reincidencia
+  - Porcentaje de conductores con scoring 0
+  - Total (agregar esta opción según su criterio y que sea de utilidad para la municipalidad)
+  - Rango etario con más infracciones (menores de 30, entre 31 y
+    50, mayores a 50)}
 
 Procedure menu();
 Begin
   Repeat
+    clrscr;
     writeln('Bienvenido al  Software de scoring');
     writeln('Elija una operación:');
     writeln('1) Administrar conductores');
@@ -40,9 +41,27 @@ Begin
 End;
 Procedure menu_conductores();
 Begin
+  Repeat
+    writeln('Administración de Conductores');
+    writeln('Elija una operación:');
+    writeln('1) Registrar conductor');
+    writeln('2) Modificar conductor');
+    writeln('3) Buscar conductor');
+    writeln('4) Eliminar conductor');
+    writeln('0) Volver al menu principal');
 
+  Until (res=0);
 End;
 Procedure menu_infracciones();
+Procedure menu_conductores();
 Begin
-
+  Repeat
+    writeln('Administración de Infracciones');
+    writeln('Elija una operación:');
+    writeln('1) Registrar infracción');
+    writeln('2) Modificar infracción');
+    writeln('3) Buscar infracción');
+    writeln('4) Eliminar infracción');
+    writeln('0) Volver al menu principal');
+  Until (res=0);
 End;
