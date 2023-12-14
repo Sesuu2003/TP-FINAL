@@ -26,6 +26,7 @@ begin
   readln(dato.tipo);
   writeln('Puntaje que se descuenta: ');
   readln(dato.puntos);
+  dato.Codigo:= Codigo;
 end;
 procedure GuardarInfra(var Arch:t_archivo; var pos:cardinal; dato:t_dato);
 begin
