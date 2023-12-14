@@ -19,13 +19,13 @@ procedure CargaInfra(var dato:t_dato);
 begin
   //Datos de la infraccion, cargar el t_dato
   writeln('Ingrese el DNI: ');
-  readln(t_dato.dni);
+  readln(dato.dni);
   writeln('Ingrese la fecha de la infraccion: ');
-  readln(t_dato.Fecha_infraccion);
+  readln(dato.Fecha_infraccion);
   writeln('tipo infracción: ');
-  readln(t_dato.tipo);
+  readln(dato.tipo);
   writeln('Puntaje que se descuenta: ');
-  readln(t_dato.puntos);
+  readln(dato.puntos);
 end;
 procedure GuardarInfra(var Arch:t_archivo; var pos:cardinal; dato:t_dato);
 begin

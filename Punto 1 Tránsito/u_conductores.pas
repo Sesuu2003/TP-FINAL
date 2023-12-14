@@ -26,14 +26,43 @@ Type
 Var 
   archivo: t_archivo;
 Implementation
-
-//ABMC
-Procedure alta();
-//agrega un conductor
+Procedure CargaCond(Var dato:t_dato);
 Begin
-  reset(archivo);
-  
+  //Datos del conductor, cargar el t_dato
+  writeln('Ingrese el DNI: ');
+  readln(dato.dni);
+  writeln('Ingrese apellido y nombre: ');
+  readln(dato.ApyNom);
+  writeln('Ingrese la fecha de nacimiento: ');
+  readln(dato.Nacimiento);
+  writeln('Ingrese el teléfono: ');
+  readln(dato.Telefono);
+  writeln('Ingrese el email: ');
+  readln(dato.Email);
+  writeln('Ingrese el scoring: ');
+  readln(dato.Scoring);
+  writeln('Ingrese la fecha de habilitación: ');
+  readln(dato.Fecha_habilitacion);
+  writeln('Ingrese cantidad de reincidencias: ');
+  readln(dato.cant_reincidencias);
 End;
+Procedure GuardarCond(Var Arch:t_archivo; Var pos:cardinal; dato:t_dato);
+Begin
+  //Escribir el archivo de infracciones
+  seek(Arch, pos);
+  write(Arch, dato);
+End;
+Procedure alta(Var Arch:t_archivo);
+
+Var 
+  dato: t_dato;
+  pos: cardinal;
+Begin
+  CargaInfra(dato);
+  pos := filesize(InfraMaster);
+  GuardarInfra(InfraMaster, pos, dato)
+End;
+
 Procedure baja();
 Begin
 
