@@ -1,4 +1,3 @@
-
 Unit u_infracciones
 
 Uses u_utilidades, crt;
@@ -7,6 +6,7 @@ Interface
 
 Type 
   t_dato = Record
+    CodigoIfraccion:cardinal; //Clave primaria de la infraccion, sino lo hacemos con esto, no tengo idea.
     DNI: string[8];
     Fecha_infraccion: string[10];
     tipo;
@@ -33,20 +33,20 @@ begin
   seek(Arch, pos);
   write(Arch, dato);
 end;
-Procedure alta();
+Procedure alta(var Arch:t_archivo);
 VAR
   dato:t_dato;
   pos:cardinal;
 Begin
   CargaInfra(dato);
-  pos:= filesize(InfraMaster);
-  GuardarInfra(InfraMaster, pos, dato);
+  pos:=filesize(InfraMaster);
+  GuardarInfra(InfraMaster, pos, dato)
 End;
-Procedure modificar();
+Procedure modificar(var Arch:t_archivo; var pos:cardinal;dato:t_dato);
 Begin
 
 End;
-Procedure consultar();
+Procedure consultar(var Arch:t_archivo; );
 Begin
 
 End;
