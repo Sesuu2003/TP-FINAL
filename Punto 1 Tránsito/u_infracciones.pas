@@ -6,7 +6,7 @@ Interface
 
 Type 
   t_dato = Record
-    CodigoIfraccion:cardinal; //Clave primaria de la infraccion, sino lo hacemos con esto, no tengo idea.
+    Codigo:cardinal; //Clave primaria de la infraccion, sino lo hacemos con esto, no tengo idea.
     DNI: string[8];
     Fecha_infraccion: string[10];
     tipo;
@@ -15,7 +15,7 @@ Type
   t_archivo = file Of t_dato;
 
 Implementation
-procedure CargaInfra(var dato:t_dato);
+procedure CargaInfra(var dato:t_dato, Codigo:cardinal);
 begin
   //Datos de la infraccion, cargar el t_dato
   writeln('Ingrese el DNI: ');
@@ -38,8 +38,8 @@ VAR
   dato:t_dato;
   pos:cardinal;
 Begin
-  CargaInfra(dato);
   pos:=filesize(InfraMaster);
+  CargaInfra(dato, pos);
   GuardarInfra(InfraMaster, pos, dato)
 End;
 Procedure modificar(var Arch:t_archivo; var pos:cardinal;dato:t_dato);
