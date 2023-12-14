@@ -1,4 +1,3 @@
-
 Program TPscoring;
 
 Uses u_conductores, u_infracciones, crt;
@@ -24,7 +23,6 @@ Var
 Procedure menu();
 Begin
   Repeat
-    clrscr;
     writeln('Bienvenido al  Software de scoring');
     writeln('Elija una operación:');
     writeln('1) Administrar conductores');
@@ -51,8 +49,6 @@ Begin
   Until (res=0);
 End;
 Procedure menu_infracciones();
-Procedure menu_conductores();
-Begin
   Repeat
     writeln('Administración de Infracciones');
     writeln('Elija una operación:');
@@ -63,3 +59,5 @@ Begin
     writeln('0) Volver al menu principal');
   Until (res=0);
 End;
+begin
+end.
