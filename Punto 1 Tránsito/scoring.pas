@@ -13,8 +13,6 @@ Var
   //! Fecha de todas las infracciones de un conductor en un período determinado
   //! Listado de los infractores a los cuales su scoring llegó a 0
   //!Estadísticas:
-
-
 {
   - Cantidad de infracciones entre dos fechas
   - Porcentaje de conductores con reincidencia
