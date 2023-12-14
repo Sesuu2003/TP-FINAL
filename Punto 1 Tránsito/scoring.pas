@@ -1,8 +1,16 @@
+
 Program TPscoring;
 
 Uses u_conductores, u_infracciones, u_utilidades, crt;
 
+Const 
+  rutaCond = 'C:\Games\Conductores.dat';
+  rutaInf = 'C:\Games\Infracciones.dat';
+
+
 Var 
+  archCond: u_conductores.t_archivo;
+  archInf: u_infracciones.t_archivo;
   op: 0..5;
   //! CRUD de conductores
   //! CRUD de infracciones
@@ -12,6 +20,9 @@ Var
   //! Fecha de todas las infracciones de un conductor en un período determinado
   //! Listado de los infractores a los cuales su scoring llegó a 0
   //!Estadísticas:
+
+
+
 {
   - Cantidad de infracciones entre dos fechas
   - Porcentaje de conductores con reincidencia
@@ -49,19 +60,20 @@ Begin
   Until (res=0);
 End;
 Procedure menu_infracciones();
-  Repeat
-    writeln('Administración de Infracciones');
-    writeln('Elija una operación:');
-    writeln('1) Registrar infracción');
-    writeln('2) Modificar infracción');
-    writeln('3) Buscar infracción');
-    writeln('4) Eliminar infracción');
-    writeln('0) Volver al menu principal');
-  Until (res=0);
+Repeat
+  writeln('Administración de Infracciones');
+  writeln('Elija una operación:');
+  writeln('1) Registrar infracción');
+  writeln('2) Modificar infracción');
+  writeln('3) Buscar infracción');
+  writeln('4) Eliminar infracción');
+  writeln('0) Volver al menu principal');
+Until (res=0);
 End;
-begin
-<<<<<<< Updated upstream
-=======
-  
->>>>>>> Stashed changes
-end.
+Begin
+  Assign(archCond, rutaCond);
+  Assign(archInf, rutaInf);
+  iniciar_archivo(archCond, rutaCond);
+  iniciar_archivo(archInf, rutaInf);
+  writeln('Holi');
+End.

@@ -1,21 +1,25 @@
-Unit u_infracciones
 
-Uses u_utilidades, crt;
+Unit u_infracciones;
 
 Interface
 
+Uses u_utilidades, crt;
+
+
 Type 
   t_dato = Record
-    Codigo:cardinal; //Clave primaria de la infraccion, sino lo hacemos con esto, no tengo idea.
+    Codigo: cardinal;
+    //Clave primaria de la infraccion, sino lo hacemos con esto, no tengo idea.
     DNI: string[8];
     Fecha_infraccion: string[10];
     tipo;
     puntos: 0..20;
   End;
   t_archivo = file Of t_dato;
+
 Implementation
-procedure CargaInfra(var dato:t_dato, Codigo:cardinal);
-begin
+Procedure CargaInfra(Var dato:t_dato; Codigo:cardinal);
+Begin
   //Datos de la infraccion, cargar el t_dato
   writeln('Ingrese el DNI: ');
   readln(dato.dni);
@@ -25,28 +29,29 @@ begin
   readln(dato.tipo);
   writeln('Puntaje que se descuenta: ');
   readln(dato.puntos);
-  dato.Codigo:= Codigo;
-end;
-procedure GuardarInfra(var Arch:t_archivo; var pos:cardinal; dato:t_dato);
-begin
+  dato.Codigo := Codigo;
+End;
+Procedure GuardarInfra(Var Arch:t_archivo; Var pos:cardinal; dato:t_dato);
+Begin
   //Escribir el archivo de infracciones
   seek(Arch, pos);
   write(Arch, dato);
-end;
-Procedure alta(var Arch:t_archivo);
-VAR
-  dato:t_dato;
-  pos:cardinal;
+End;
+Procedure alta(Var Arch:t_archivo);
+
+Var 
+  dato: t_dato;
+  pos: cardinal;
 Begin
-  pos:=filesize(InfraMaster);
+  pos := filesize(InfraMaster);
   CargaInfra(dato, pos);
   GuardarInfra(InfraMaster, pos, dato)
 End;
-Procedure modificar(var Arch:t_archivo; var pos:cardinal;dato:t_dato);
+Procedure modificar(Var Arch:t_archivo; Var pos:cardinal;dato:t_dato);
 Begin
 
 End;
-Procedure consultar(var Arch:t_archivo; );
+Procedure consultar(Var Arch:t_archivo; );
 Begin
 
 End;

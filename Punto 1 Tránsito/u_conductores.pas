@@ -2,7 +2,7 @@ Unit u_conductores;
 
 Interface
 
-Uses crt, utilidades;
+Uses crt, u_utilidades;
 
 Const 
   N = 20;
