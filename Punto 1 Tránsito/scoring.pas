@@ -20,16 +20,14 @@ Var
   //! Fecha de todas las infracciones de un conductor en un período determinado
   //! Listado de los infractores a los cuales su scoring llegó a 0
   //!Estadísticas:
-
-
-
 {
   - Cantidad de infracciones entre dos fechas
   - Porcentaje de conductores con reincidencia
   - Porcentaje de conductores con scoring 0
   - Total (agregar esta opción según su criterio y que sea de utilidad para la municipalidad)
   - Rango etario con más infracciones (menores de 30, entre 31 y
-    50, mayores a 50)}
+    50, mayores a 50)
+}
 
 Procedure menu();
 Begin

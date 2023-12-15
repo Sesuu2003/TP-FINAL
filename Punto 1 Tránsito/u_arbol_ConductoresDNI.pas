@@ -17,7 +17,11 @@ function arbol_vacio (raiz:t_punt): boolean;
 function arbol_lleno (raiz:t_punt): boolean;
 procedure suprime (var raiz:t_punt;x:t_dato);
 procedure inorden(var raiz:t_punt);
+<<<<<<< HEAD
 function preorden(raiz:t_punt;buscado:string[8]):t_punt;//pos si encontrado, -1 si no
+=======
+function preorden(raiz:t_punt;buscado:string[8]):t_punt;//devuelve Posicion
+>>>>>>> 6b8ca11568a055d8c1450bf6ba3ac5ee122f2ae8
 
 implementation
 procedure crear_arbol (var raiz:t_punt);
