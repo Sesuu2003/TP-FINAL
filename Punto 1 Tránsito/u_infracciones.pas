@@ -14,6 +14,7 @@ Type
     Fecha_infraccion: string[10];
     tipo;
     puntos: 0..20;
+    reclamo: bool;
   End;
   t_archivo = file Of t_dato;
 
@@ -23,7 +24,7 @@ Begin
   //Datos de la infraccion, cargar el t_dato
   writeln('Ingrese el DNI: ');
   readln(dato.dni);
-  writeln('Ingrese la fecha de la infraccion: ');
+  writeln('Ingrese la fecha de la infraccion: ');//dia de carga timeget
   readln(dato.Fecha_infraccion);
   writeln('tipo infracción: ');
   readln(dato.tipo);
