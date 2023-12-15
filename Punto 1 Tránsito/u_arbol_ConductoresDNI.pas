@@ -3,17 +3,6 @@ interface
 uses crt;
 type
     t_dato = Record
-        DNI: string[8];
-        ApyNom: string[50];
-        Nacimiento: string[10];
-        Telefono: string[10];
-        //Ej 3446366096 
-        Email: string[50];
-        Scoring: smallint;//Pueden ser negativos --> por eso no es de 0..20;
-        Habilitado: boolean;
-        Fecha_habilitacion: string[10];
-        cant_reincidencias: 0..N;
-        Activo:boolean; //Por si el scoring es 0, baja lógica;
         Clave:string[50]; //Aun no se que es la clave, supongo que clave de ingreso;
         Posicion_relativa: cardinal;
     End;
@@ -28,7 +17,7 @@ function arbol_vacio (raiz:t_punt): boolean;
 function arbol_lleno (raiz:t_punt): boolean;
 procedure suprime (var raiz:t_punt;x:t_dato);
 procedure inorden(var raiz:t_punt);
-function preorden(raiz:t_punt;buscado:string[8]):t_punt;
+function preorden(raiz:t_punt;buscado:string[8]):t_punt;//devuelve Posicion
 
 implementation
 procedure crear_arbol (var raiz:t_punt);

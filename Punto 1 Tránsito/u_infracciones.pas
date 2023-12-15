@@ -38,7 +38,6 @@ Begin
   write(Arch, dato);
 End;
 Procedure alta(Var Arch:t_archivo);
-
 Var 
   dato: t_dato;
   pos: cardinal;
